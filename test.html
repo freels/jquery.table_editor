@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="upstream/jquery-1.4a2.js"></script>
+  <script src="upstream/jquery.tablesorter.js"></script>
+
+  <script src="jquery.table_editor.js"></script>
+  <script src="table_editor_util.js"></script>
+  <script src="table_editor_cellinput.js"></script>
+  <script src="table_editor_filter.js"></script>
+  <script src="table_editor_cellinfo.js"></script>
+  <script src="table_editor_cellnav.js"></script>
+
+  <script>
+    $(function(){
+      var te = new TableEditor($('#items'));
+    });
+  </script> 
+</head>
+
+<body>
+  <div id="items" data-ajax-root="/items">
+    <table cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th>name</th>
+          <th data-type="integer">level</th>
+          <th data-attr="damage_prob" data-type="number">damage prob</th>
+          <th data-type="select" data-values="slot 1:slot 2:slot 3">slot</th>
+          <th data-type="checkbox" data-values="&#10003;">drop</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <tr>
+          <td>foo</td>
+          <td class="number">2</td>
+          <td class="number">0.4</td>
+          <td>slot 1</td>
+          <td style="text-align:center">&#10003;</td>
+        </tr>
+        
+        <tr>
+          <td>bar</td>
+          <td class="number">3</td>
+          <td class="number">0.4</td>
+          <td>slot 2</td>
+          <td style="text-align:center"></td>
+        </tr>
+        
+        <tr>
+          <td>baz</td>
+          <td class="number">10</td>
+          <td class="number">0.4</td>
+          <td>slot 3</td>
+          <td style="text-align:center"></td>
+        </tr>
+        
+        <tr>
+          <td>qux</td>
+          <td class="number">5</td>
+          <td class="number">0.000121</td>
+          <td>slot 1</td>
+          <td style="text-align:center">&#10003;</td>
+        </tr>
+
+        <tr>
+          <td>quux</td>
+          <td class="number">102</td>
+          <td class="number">0.213132</td>
+          <td>slot 2</td>
+          <td style="text-align:center"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
